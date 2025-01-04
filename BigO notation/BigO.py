@@ -15,4 +15,4 @@ def binary_search(arr, num):
     else:
         return binary_search(arr[mid+1:], num)
     
-print(binary_search(arr, 10))
+# print(binary_search(arr, 10))
