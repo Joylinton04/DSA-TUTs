@@ -26,7 +26,7 @@ for course in credit_hours:
     
 print((total_marks/standard_marks)*100)
 
-# ask and store input in an object
-# store credit hours in an object
-# write the equation for calculating the total marks
+# ask and store input in an object *
+# store credit hours in an object *
+# write the equation for calculating the total marks 
 # divide the total marks by 1800 and print the output
