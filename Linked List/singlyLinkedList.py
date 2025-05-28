@@ -32,6 +32,15 @@ class SLinkedList():
                 self.tail = newNode
             else:
                 tempNode = self.head
+                index = 0
+                while index < location - 1:
+                    tempNode = tempNode.next
+                    index += 1
+                nextNode = tempNode.next
+                tempNode.next = newNode
+                newNode.next = nextNode
+
+
 
 
 SingkyLinkedList = SLinkedList()
