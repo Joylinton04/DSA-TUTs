@@ -27,7 +27,7 @@ class SLinkedList():
                 newNode.next = self.head
                 self.head = newNode
             elif location == 1:
-                newNode.next = self.tail
+                newNode.next = None
                 self.tail.next = newNode
                 self.tail = newNode
             else:
