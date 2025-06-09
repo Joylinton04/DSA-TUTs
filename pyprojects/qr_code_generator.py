@@ -19,4 +19,4 @@ def generate_qrcode():
     
     print("QR code generated successfully as", filename)
 
-# generate_qrcode()
+generate_qrcode()

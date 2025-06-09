@@ -12,7 +12,7 @@ def convert_currency():
             target_currency = str(input("Select your target currency from the list:  "))
             amount = float(input("Enter the amount you want to convert: "))
             
-            print(CURRENCIES[base_currency] + "to" + CURRENCIES[target_currency])
+            print(CURRENCIES[base_currency] + " to " + CURRENCIES[target_currency])
             response = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={CURRENCIES[base_currency]}&to={CURRENCIES[target_currency]}")
             print(f"{amount} {CURRENCIES[base_currency]} is {response.json()['rates'][CURRENCIES[target_currency]]} {CURRENCIES[target_currency]}")
             break
