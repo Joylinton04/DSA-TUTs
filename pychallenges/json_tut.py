@@ -10,4 +10,4 @@ person = {
 json_string = json.dumps(person)
 original_person = json.loads(json_string)
 
-print(type(original_person))
+print(original_person)

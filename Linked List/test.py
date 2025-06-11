@@ -74,4 +74,4 @@ linkedList.insertSLL(3,2)
 
 print([node.value for node in linkedList])
 linkedList.traverseSLL()
-linkedList.searchSLL(5)
+linkedList.searchSLL(1)
