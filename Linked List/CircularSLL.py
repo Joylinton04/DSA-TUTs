@@ -64,13 +64,60 @@ class CircularSLList:
                 tempNode = tempNode.next
                 if tempNode == self.tail.next:
                     return "The node does not exist in this CSLL"
-        
-        
-
-        
                 
+    # Traversing the CSLL
+    def travseringCSLL(self):
+        if self.head is None:
+            print("The CSLL does not exist")
+        else:
+            tempNode = self.head
+            while tempNode:
+                print(tempNode.value)
+                tempNode = tempNode.next
+                if tempNode == self.tail.next:
+                    break
                 
-                
+    # Deletion of a node
+    def deleteNode(self, location):
+        if self.head is None:
+            print("CSLL does not exist")
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.tail.next = self.head
+            elif location == 1:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    node = self.head
+                    index = 0
+                    while node is not None:
+                        if node.next == self.tail:
+                           break 
+                        node = node.next
+                    node.next = self.head
+                    self.tail = node
+            else:
+                tempNode = self.head
+                index = 0
+                while index < location - 1:
+                    tempNode = tempNode.next
+                    index += 1
+                nextNode = tempNode.next
+                tempNode.next = nextNode.next
+    
+        # Deletion of CSLL
+    def deleteCSLL(self):
+        self.head = None
+        self.tail.next = None
+        self.tail = None
     
 
 clist = CircularSLList()
@@ -81,5 +128,19 @@ clist.InsertCSLL(4,1)
 clist.InsertCSLL(5,1)
 clist.InsertCSLL(3,3)
 
-print(['->'.join([str(node.value) for node in clist])])
-print(clist.searchCSLL(6))
+print([node.value for node in clist])
+# print(clist.searchCSLL(6))
+
+# clist.travseringCSLL()
+
+# clist.deleteNode(0)
+clist.deleteNode(1)
+clist.InsertCSLL(6, 1)
+clist.InsertCSLL(7, 1)
+
+
+print([node.value for node in clist])
+
+clist.deleteCSLL()
+
+print([node.value for node in clist])
