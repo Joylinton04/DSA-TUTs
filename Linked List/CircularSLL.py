@@ -141,6 +141,6 @@ clist.InsertCSLL(7, 1)
 
 print([node.value for node in clist])
 
-clist.deleteCSLL()
+# clist.deleteCSLL()
 
-print([node.value for node in clist])
+# print([node.value for node in clist])
