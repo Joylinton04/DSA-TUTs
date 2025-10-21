@@ -31,4 +31,3 @@ print(ll2)
 print("\n")
 
 print(sumList(ll1, ll2))
-    
