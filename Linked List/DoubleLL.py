@@ -43,13 +43,41 @@ class DoubleLList:
                 tempNode = self.head
                 index = 0
                 while index < location - 1:
-                    tempNode =tempNode.next
+                    tempNode = tempNode.next
                     index += 1
                 newNode.next = tempNode.next
                 newNode.prev = tempNode
                 newNode.next.prev = newNode
                 tempNode.next = newNode
                 
+    def traverseDLL(self):
+        if self.head is None:
+            print("There are no nodes in DLL")
+        else:
+            tempNode = self.head
+            while tempNode:
+                print(tempNode.value)
+                tempNode = tempNode.next
+                
+    def reverseTraverse(self):
+        if self.head is None:
+            print("There are no nodes in DLL")
+        else:
+            tempNode = self.tail
+            while tempNode:
+                print(tempNode.value)
+                tempNode = tempNode.prev
+    
+    def searchDLL(self,value):
+        if self.head is None:
+            print("There are no nodes in DLL")
+        else:
+            tempNode = self.head
+            while tempNode:
+                if tempNode.value == value:
+                    return tempNode.value
+                tempNode = tempNode.next
+            return "The node does not exist in this list"
             
             
     
@@ -64,3 +92,9 @@ Dll.insertDLL(1,0)
 Dll.insertDLL(6,1)
 Dll.insertDLL(3,2)
 print([node.value for node in Dll])
+
+# Dll.traverseDLL()
+# print("\nReverse Traverse\n")
+# Dll.reverseTraverse()
+
+print(Dll.searchDLL(5))
