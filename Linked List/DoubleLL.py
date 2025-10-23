@@ -78,9 +78,50 @@ class DoubleLList:
                     return tempNode.value
                 tempNode = tempNode.next
             return "The node does not exist in this list"
-            
-            
+        
+    def deleteNode(self, location):
+        if self.head == None:
+            print("There are no nodes in DLL")
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.head.prev = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.head.prev = None
+            elif location == 1:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.head.prev = None
+                    self.head = None
+                    self.tail = None
+                else: 
+                    self.tail = self.tail.prev
+                    self.tail.next = None
+            else:
+                tempNode = self.head
+                index = 0
+                while index < location - 1:
+                    tempNode = tempNode.next
+                    index += 1
+                tempNode.next = tempNode.next.next
+                tempNode.next.prev = tempNode
     
+    def deleteDLL(self):
+        if self.head is None:
+            return "There are no nodes in DLL"
+        else:
+            tempNode = self.head
+            while tempNode:
+                tempNode.prev = None
+                tempNode = tempNode.next
+            self.head = None
+            self.tail = None
+            print("DLL has been deleted")
+                    
     
 Dll = DoubleLList()
 print(Dll.createDLL(5))
@@ -97,4 +138,8 @@ print([node.value for node in Dll])
 # print("\nReverse Traverse\n")
 # Dll.reverseTraverse()
 
-print(Dll.searchDLL(5))
+# print(Dll.searchDLL(5))
+Dll.deleteNode(1)
+print([node.value for node in Dll])
+Dll.deleteDLL()
+Dll.traverseDLL()
