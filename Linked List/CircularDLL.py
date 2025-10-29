@@ -60,7 +60,76 @@ class CircularDLL:
                 node.next.prev = tempNode
                 tempNode.next = node
                 
+    def traverseCDLL(self):
+        if self.head is None:
+            return "The CDLL is empty"
+        else:
+            tempNode = self.head
+            while True:
+                print(tempNode.value)
+                if tempNode == self.tail:
+                    break
+                tempNode = tempNode.next
+    
+    def reverseTraverse(self):
+        if self.head is None:
+            return "The CDLL is empty"
+        else:
+            node = self.tail
+            while node:
+                print(node.value)
+                if node == self.head:
+                    break
+                node = node.prev
+    
+    def searchCDLL(self, value):
+        if self.head is None:
+            return "The CDLL is empty"
+        else:
+            tempNode = self.head
+            while tempNode:
+                if tempNode.value == value:
+                    return tempNode.value
+                if tempNode == self.tail:
+                    return "The value does not exist"
+                tempNode = tempNode.next
                 
+    def deleteNode(self, location):
+        if self.head is None:
+            return "The CDLL is empty"
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head.prev = None
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.head.prev = self.tail
+                    self.head.next = self.head
+            elif location == 1:
+                if self.head == self.tail:
+                    self.head.prev = None
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.tail = self.tail.prev
+                    self.tail.next = self.head
+                    self.head.prev = self.tail
+            else:
+                curNode = self.head
+                index = 0
+                while index < location - 1:
+                    curNode = curNode.next
+                    index += 1
+                curNode.next = curNode.next.next
+                curNode.next.prev = curNode
+                print("The node has been successfully deleted")
+
+
+
     
 ll = CircularDLL()
 
@@ -69,5 +138,9 @@ ll.createCDLL(2)
 print([node.value for node in ll])
 ll.insertCDLL(1,1)
 ll.insertCDLL(0,1)
-ll.insertCDLL(3,0)
+ll.insertCDLL(3,2)
 print([node.value for node in ll])
+ll.traverseCDLL()
+print()
+ll.reverseTraverse()
+print(ll.searchCDLL(11))
