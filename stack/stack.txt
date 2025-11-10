@@ -1,0 +1,14 @@
+A stack is a linear data structure that follows the Last In, first Out principle.
+
+Typically used whenever we need a funcionality in our application that ultilizes the last added element
+
+Examples;
+Back button browser
+
+Stack Operations
+- Push 
+- Pop
+- Peek
+- isEmpty()
+- isFull()
+- delete()
