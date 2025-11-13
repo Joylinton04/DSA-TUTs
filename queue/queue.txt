@@ -1,0 +1,10 @@
+Queue is a linear data structure that follows the first-in / first-out principle
+
+Queue Operations:
+- Create Queue
+- Enqueue
+- Dequeue
+- Peek
+- isEmpty
+- isFull
+- deleteQueue
