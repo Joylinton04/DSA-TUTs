@@ -1,0 +1,8 @@
+Python queue using collections.deque class
+It support removing objects at the beginning and the end of the queue
+
+Methods
+- deque()
+- append()
+- popleft()
+- clear()
