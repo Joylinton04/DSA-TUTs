@@ -1,0 +1,15 @@
+A tree is a nonlinear data structure with hieriarchical relationships between its elements w/o having any cycle. 
+It's basically the reversed from a real life cycle
+
+linear data structure - stores data sequentially
+
+Tree terminologies
+- Root: top node without parents
+- Edge: a link between parent and a child
+- Leaf: a node which does not have parents
+- Siblings: children of same parents
+- Ancestor: parents, grandparents, great grandparents of a node
+- Depth of node: a length of a path from root to node
+- Height of node: a length of a path from node to the deepest node
+- Depth of tree: depth of root node
+- Height of tree: height of root node
