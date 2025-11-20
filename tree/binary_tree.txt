@@ -1,1 +1,13 @@
-Binary tree is a tree in which each node has at least 2 children; often referred to us left and right children
+Binary tree is a tree in which each node has at least 2 children; 
+often referred to us left and right children
+
+Binary tree can be represented in
+    - Linked List
+    - Python List
+
+Traversal of tree Linked List
+- Breadth first search
+    - PreOrder Traversal
+
+- Depth first search
+    
