@@ -8,6 +8,8 @@ Binary tree can be represented in
 Traversal of tree Linked List
 - Breadth first search
     - PreOrder Traversal
-
+    - InOrder Traversal
+    - PostOrder Traversal
+    - LevelOrder Traversal
 - Depth first search
     
