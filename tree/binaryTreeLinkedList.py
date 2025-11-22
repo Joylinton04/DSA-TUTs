@@ -88,6 +88,26 @@ def searchNode(rootNode, nodeValue):
             customQueue.enqueue(currentNode.right)
     return "The value does not exist in the binary tree"
 
+
+def insertNodeBinaryTree(rootNode, newNode):
+    if not rootNode:
+        rootNode = newNode
+        return
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        currentNode = customQueue.dequeue()
+        if not currentNode.left:
+            currentNode.left = newNode
+            return
+        else:
+            customQueue.enqueue(currentNode.left)
+        if not currentNode.right:
+            currentNode.right = newNode
+            return
+        else:
+            customQueue.enqueue(currentNode.right)
+
     
 
 print("PreOrder Traversal:")
