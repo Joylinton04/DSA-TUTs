@@ -68,6 +68,26 @@ def levelOrderTraversalWithQueueLinkedList(rootNode):
             customQueue.enqueue(root.left)
         if root.right is not None:
             customQueue.enqueue(root.right)
+            
+            
+
+def searchNode(rootNode, nodeValue):
+    if not rootNode:
+        return "The binary tree is empty"
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        currentNode = customQueue.dequeue()
+        if currentNode.value == nodeValue:
+            return "The value exists in the binary tree"
+        if currentNode.value == nodeValue:
+            return "The value exists in the binary tree"
+        if currentNode.left:
+            customQueue.enqueue(currentNode.left)
+        if currentNode.right:
+            customQueue.enqueue(currentNode.right)
+    return "The value does not exist in the binary tree"
+
     
 
 print("PreOrder Traversal:")
@@ -78,3 +98,8 @@ print("\nPostOrder Traversal:")
 postOrderTraversal(tree)
 print("\nLevelOrder Traversal:")
 levelOrderTraversalWithQueueLinkedList(tree)
+
+
+
+print("\nSearching a node:")
+print(searchNode(tree, "Backend dev"))
