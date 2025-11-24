@@ -107,19 +107,91 @@ def insertNodeBinaryTree(rootNode, newNode):
             return
         else:
             customQueue.enqueue(currentNode.right)
+            
+
+
+def getDeepestNode(rootNode):
+    if not rootNode:
+        return 
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        currentNode = customQueue.dequeue()
+        if currentNode.left:
+            customQueue.enqueue(currentNode.left)
+        if currentNode.right:
+            customQueue.enqueue(currentNode.right)
+    deepestNode = currentNode
+    return deepestNode.value
+
+
+def deleteDeepestNode(rootNode, dNode):
+    if not rootNode:
+        return
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        currentNode = customQueue.dequeue()
+        if currentNode.value is dNode:
+            currentNode.value = None
+            return
+        if currentNode.right:
+            if currentNode.right is dNode:
+                currentNode.right = None
+                return
+            else:
+                customQueue.enqueue(currentNode.right)
+        if currentNode.left:
+            if currentNode.left is dNode:
+                currentNode.left = None
+                return
+            else:
+                customQueue.enqueue(currentNode.left)
+                
+    
+def deleteNode(rootNode, node):
+    if not rootNode:
+        return "The binary tree is empty"
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        currentNode = customQueue.dequeue()
+        if currentNode.value == node:
+            dNode = getDeepestNode(rootNode)
+            currentNode.value = dNode
+            deleteDeepestNode(rootNode, dNode)
+            return "The node has been successfully deleted"
+        if currentNode.left:
+            customQueue.enqueue(currentNode.left)
+        if currentNode.right:
+            customQueue.enqueue(currentNode.right)
+    return "Failed to delete the node"
 
     
 
 print("PreOrder Traversal:")
+print("---------------")
 preOrderTraversal(tree)
 print("\nInOrder Traversal:")
+print("---------------")
 InOrderTraversal(tree)
 print("\nPostOrder Traversal:")
+print("---------------")
 postOrderTraversal(tree)
 print("\nLevelOrder Traversal:")
+print("---------------")
 levelOrderTraversalWithQueueLinkedList(tree)
 
 
 
 print("\nSearching a node:")
+print("---------------")
 print(searchNode(tree, "Backend dev"))
+
+print("\nDelete node:")
+print("---------------")
+
+print(deleteNode(tree, "Frontend"))
+
+print("---------------")
+levelOrderTraversalWithQueueLinkedList(tree)
