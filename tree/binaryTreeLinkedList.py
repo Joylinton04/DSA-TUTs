@@ -168,6 +168,18 @@ def deleteNode(rootNode, node):
     return "Failed to delete the node"
 
     
+    
+def deleteBT(rootNode):
+    rootNode.value = None
+    rootNode.left = None
+    rootNode.right = None
+    return "Binary tree deleted successfully"
+
+
+
+
+
+
 
 print("PreOrder Traversal:")
 print("---------------")
@@ -195,3 +207,9 @@ print(deleteNode(tree, "Frontend"))
 
 print("---------------")
 levelOrderTraversalWithQueueLinkedList(tree)
+
+
+print("---------------")
+print(deleteBT(tree))
+print("---------------")
+levelOrderTraversalWithQueueLinkedList(tree)  
