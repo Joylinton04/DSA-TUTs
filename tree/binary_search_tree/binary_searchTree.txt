@@ -1,0 +1,8 @@
+Binary Search Tree (BST) is a type of binary tree where each node has a value that is greater than all values in its left subtree and less than all values in its right subtree. This property allows for efficient searching, insertion, and deletion operations.
+It performs faster than binary tree when inserting and deleting nodes.
+
+Operations:
+1. Insertion
+2. Deletion
+3. Searching
+4. Traversal
