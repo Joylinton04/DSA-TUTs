@@ -1,1 +1,15 @@
 An AVL tree is a self-balancing binary search tree that maintains a height difference of at most one between the left and right subtrees of any node.
+
+Properties:
+1. Every node has a balance factor (BF) that is the height difference between its left and right subtrees.
+2. BF can be -1, 0, or 1.
+3. The tree is height-balanced, meaning the height difference between any two nodes is at most 1.
+4. The tree is a binary search tree, meaning it satisfies the BST properties.
+
+
+Insertion:
+left left condition
+-> In this condition, right rotation is made
+
+left right condition
+-> left rotation and right rotation
