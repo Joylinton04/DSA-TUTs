@@ -6,6 +6,10 @@ Properties:
 3. The tree is height-balanced, meaning the height difference between any two nodes is at most 1.
 4. The tree is a binary search tree, meaning it satisfies the BST properties.
 
+conditions to look out when performing AVL
+- find the disbalanced node
+- check the condition (right right, left left, etc)
+
 
 Insertion:
 left left condition
@@ -13,3 +17,9 @@ left left condition
 
 left right condition
 -> left rotation and right rotation
+
+Right right condition
+-> left rotation
+
+Right left condition
+-> right rotation and left rotation
